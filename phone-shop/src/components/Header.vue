@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="container">
-            <div class="nav-panel">
+            <!--<div class="nav-panel">
                 <h3 class="title">{{title}}</h3>
                 <div class="sections">
                     <ul class="sections-list">
@@ -12,7 +12,48 @@
                         <li class="section"> <a href="#" class="section-link">О нас</a></li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Панель навигации</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Переключатель навигации">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ссылка</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Выпадающий список
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Действие</a></li>
+                                    <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Отключенная</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                            <button class="btn btn-outline-success" type="submit">Поиск</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 </template>
@@ -39,7 +80,7 @@ export default {
 @container: 1440px;
 @header-height: 65px;
 @centre: 0 auto;
-@bgc: #2c3e50;
+@bgc: rgba(33, 37, 41);
 
 * {
     margin: 0;
