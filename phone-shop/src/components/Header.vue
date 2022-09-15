@@ -15,7 +15,7 @@
             </div>-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Панель навигации</a>
+                    <a class="navbar-brand" href="#">Shop</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Переключатель навигации">
@@ -27,20 +27,22 @@
                                 <a class="nav-link active" aria-current="page" href="#">Главная</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Ссылка</a>
+                                <a class="nav-link" href="#">Каталог</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Выпадающий список
+                                    data-bs-toggle="dropdown" aria-expanded="false" @click="openMenu">
+                                    Категории
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Действие</a></li>
-                                    <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                                <ul v-show="isOpen" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Iphone</a></li>
+                                    <li><a class="dropdown-item" href="#">Ipad</a></li>
+                                    <li><a class="dropdown-item" href="#">Аксесуары</a></li>
+                                    <li><a class="dropdown-item" href="#">Ремонт</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                                    <li><a class="dropdown-item" href="#">Подарки</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -60,8 +62,19 @@
 <script>
 export default {
     name: 'Header',
+    data() {
+        return {
+            isOpen: false,
+            navDropdownMenu: 'navDropdownMenu'
+        }
+    },
     props: {
         title: String
+    },
+    methods: {
+        openMenu() {
+            this.isOpen = !this.isOpen;
+        }
     }
 }
 </script>
@@ -78,7 +91,6 @@ export default {
 }
 
 @container: 1440px;
-@header-height: 65px;
 @centre: 0 auto;
 @bgc: rgba(33, 37, 41);
 
@@ -95,7 +107,6 @@ export default {
 .header {
     background-color: @bgc;
     .width-old-tag();
-    min-height: @header-height;
     justify-content: center;
 }
 
@@ -112,7 +123,10 @@ export default {
     top: 50%;*/
     display: flex;
     align-items: center;
-    min-height: @header-height;
+}
+
+.dropdown-menu {
+    display: block;
 }
 
 .title {

@@ -7,11 +7,13 @@
 
 <script>
 import Header from './components/Header.vue'
+import News from './components/News.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    News
   }
 }
 </script>
